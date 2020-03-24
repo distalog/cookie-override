@@ -1,0 +1,31 @@
+{
+  "name": "cookie-test",
+  "version": "0.0.1",
+  "description": "Cookie Test",
+  "author": "didier@distalog.ch",
+  "scripts": {
+    "build": "git pull && npm install",
+    "build-prod": "npm install",
+    "start": "node app.js"
+  },
+  "bin": {
+    "cookie-test": "app.js"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/distalog/cookie-override.git"
+  },
+  "keywords": [
+    "cookie",
+    "http"
+  ],
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/distalog/cookie-override/issues"
+  },
+  "homepage": "https://github.com/distalog/cookie-override#readme"
+}
