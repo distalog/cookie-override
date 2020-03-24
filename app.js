@@ -1,30 +1,28 @@
-var Hapi = require('@hapi/hapi')
+'use strict';
 
-// create a server with a host and port
-var server = new Hapi.Server({
-  host: 'localhost',
-  port: 3000
-})
+const Hapi = require('@hapi/hapi');
+const Path = require('path');
 
-// add “hello world” route
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: (request, h) => {
-    return 'Hello Future Studio!'
-  }
-})
+const start = async () => {
 
-async function start () {
-  // start your server
-  try {
-    await server.start()
-  } catch (err) {
-    console.error(err)
-    process.exit(1)
-  }
+    const server = Hapi.server();
 
-  console.log('Server running at: ', server.info.uri)
-}
+    await server.register(require('@hapi/inert'));
 
-start()
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: Path.join(__dirname, 'static'),
+                listing: true
+            }
+        }
+    });
+
+    await server.start();
+
+    console.log('Server running at:', server.info.uri);
+};
+
+start();
