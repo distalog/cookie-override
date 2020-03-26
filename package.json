@@ -1,0 +1,27 @@
+{
+  "name": "cookie-test",
+  "version": "0.0.1",
+  "description": "Cookie Test",
+  "author": "didier@distalog.ch",
+  "scripts": {
+    "build": "git pull && npm install",
+    "build-prod": "npm install",
+    "start": "node app.js"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/distalog/cookie-param-handler.git"
+  },
+  "keywords": [
+    "cookie",
+    "http"
+  ],
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/distalog/cookie-param-handler/issues"
+  },
+  "homepage": "https://github.com/distalog/cookie-param-handler#readme"
+}
