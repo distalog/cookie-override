@@ -2,20 +2,14 @@
 
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
-const cookiePostHandler = require("../cookie-post-handler")
+const cookieParamHandler = require("../cookie-param-handler").cookieParamHandler
+
 const start = async () => {
 
     const server = Hapi.server({
         host: 'localhost',
         port: 3000,
-        debug: {
-            request: '*',
-            log: '*'
-        },
         routes: {
-            log: {
-                collect: true
-            },
             files: {
                 relativeTo: "/",
             },
@@ -28,7 +22,7 @@ const start = async () => {
         method: '*',
         path: '/{param?}',
         options: {
-            pre: [cookiePostHandler()],
+            pre: [cookieParamHandler()],
         },
         handler: {
             directory: {
@@ -37,16 +31,7 @@ const start = async () => {
             }
         }
     });
-
-    server.events.on('log', (event, tags) => {
-        console.log("log: "+event);
-    });
-
-    server.events.on('request', (event, tags) => {
-        console.log("request: "+event);
-    });
     await server.start();
-
     console.log('Server running at:', server.info.uri);
 };
 

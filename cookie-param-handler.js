@@ -1,9 +1,6 @@
 'use strict';
 
-const Hapi = require('@hapi/hapi');
-const Path = require('path');
-
-const cookiePostHandler = function (cookieRegex = "^cookie_", redirect = true) {
+exports.cookieParamHandler = function (cookieRegex = "^cookie_", redirect = true) {
     return function( cookieRegex, redirect, request, h ) {
         if (request.method == "post") {
             for(const k in request.payload) {
@@ -20,3 +17,5 @@ const cookiePostHandler = function (cookieRegex = "^cookie_", redirect = true) {
         return h.continue;
     }.bind(undefined, cookieRegex, redirect);
 };
+
+
