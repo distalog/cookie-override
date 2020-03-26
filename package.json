@@ -1,12 +1,11 @@
 {
-  "name": "cookie-test",
+  "name": "cookie-param-handler",
   "version": "0.0.1",
-  "description": "Cookie Test",
+  "description": "Cookie Param Handler: set cookies directly from form inputs.",
   "author": "didier@distalog.ch",
   "scripts": {
     "build": "git pull && npm install",
     "build-prod": "npm install",
-    "start": "node app.js"
   },
   "directories": {
     "example": "example"
