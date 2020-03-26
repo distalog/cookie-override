@@ -1,6 +1,6 @@
 'use strict';
 
-exports.cookieParamHandler = function (cookieRegex = "^cookie_", redirect = true) {
+exports.Handler = function (cookieRegex = "^cookie_", redirect = true) {
     return function( cookieRegex, redirect, request, h ) {
         if (request.method == "post") {
             for(const k in request.payload) {
