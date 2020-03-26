@@ -3,7 +3,7 @@
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
 
-const cookiePostParamHandler = function (request, h) {
+const cookiePostHandler = function (request, h) {
     if (request.method == "post") {
         const cookieRegex = "^cookie_";
         for(const k in request.payload) {
@@ -35,7 +35,6 @@ const start = async () => {
             files: {
                 relativeTo: "/",
             },
-
         }
     });
 
@@ -45,7 +44,7 @@ const start = async () => {
         method: '*',
         path: '/{param?}',
         options: {
-            pre: [cookiePostParamHandler],
+            pre: [cookiePostHandler],
         },
         handler: {
             directory: {
