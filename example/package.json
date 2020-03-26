@@ -1,0 +1,11 @@
+{
+  "name": "cookie-example",
+  "version": "0.0.1",
+  "description": "Cookie Example",
+  "author": "didier@distalog.ch",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/inert": "^6.0.1"
+  },
+  "main": "app.js",
+}

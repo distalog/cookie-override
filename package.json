@@ -8,8 +8,8 @@
     "build-prod": "npm install",
     "start": "node app.js"
   },
-  "bin": {
-    "cookie-test": "app.js"
+  "directories": {
+    "example": "app.js"
   },
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
@@ -18,15 +18,15 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/distalog/cookie-override.git"
+    "url": "git+https://github.com/distalog/cookie-param-handler.git"
   },
   "keywords": [
     "cookie",
     "http"
   ],
-  "license": "GPL-3.0-or-later",
+  "license": "BSD",
   "bugs": {
-    "url": "https://github.com/distalog/cookie-override/issues"
+    "url": "https://github.com/distalog/cookie-param-handler/issues"
   },
-  "homepage": "https://github.com/distalog/cookie-override#readme"
+  "homepage": "https://github.com/distalog/cookie-param-handler#readme"
 }
