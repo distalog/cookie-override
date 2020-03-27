@@ -1,7 +1,13 @@
 'use strict';
 
-exports.Handler = function (cookieRegex = "^cookie_", redirect = true) {
-    return function( cookieRegex, redirect, request, h ) {
+exports.Handler = function (cookieRegex = "^cookie_",
+                            cookieOptions = {},
+                            redirect = true) {
+    return function( cookieRegex,
+                     cookieOptions,
+                     redirect,
+                     request,
+                     h ) {
         if (request.method == "post") {
             for(const k in request.payload) {
                 if (k.match(cookieRegex)) {
@@ -15,7 +21,7 @@ exports.Handler = function (cookieRegex = "^cookie_", redirect = true) {
             }
         }
         return h.continue;
-    }.bind(undefined, cookieRegex, redirect);
+    }.bind(undefined, cookieRegex, cookieOptions, redirect);
 };
 
 
