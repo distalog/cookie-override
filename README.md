@@ -4,7 +4,7 @@
 
 See code in the [example](example) directory for usage.
 
-Used by distalog/cookie-css# for instance.
+Used by [cookie-css](distalog/cookie-css) for instance.
 
 ### Security
 
