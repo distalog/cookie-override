@@ -1,5 +1,5 @@
 {
-  "name": "cookie-param-handler",
+  "name": "@distalog/cookie-param-handler",
   "version": "0.0.1",
   "description": "Cookie Param Handler: set cookies directly from form inputs.",
   "author": "didier@distalog.ch",
