@@ -9,7 +9,14 @@ const start = async () => {
     const server = Hapi.server({
         host: 'localhost',
         port: 3000,
+        debug: {
+            request: '*',
+            log: '*'
+        },
         routes: {
+            log: {
+                collect: true
+            },
             files: {
                 relativeTo: "/",
             },
