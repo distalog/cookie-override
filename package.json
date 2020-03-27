@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/distalog/cookie-param-handler/issues"
   },
-  "homepage": "https://github.com/distalog/cookie-param-handler#readme"
+  "homepage": "https://github.com/distalog/cookie-param-handler#readme",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  }
 }
