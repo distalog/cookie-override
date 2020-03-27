@@ -2,7 +2,7 @@
 
 exports.Handler = function (
     cookieOptions = {},
-    cookieRegex = = /^cookie_/,
+    cookieRegex = /^cookie_/,
     redirect = true) {
     return function(
         cookieOptions,
