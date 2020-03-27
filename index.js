@@ -2,7 +2,7 @@
 
 exports.Handler = function (
     cookieOptions = {},
-    cookieRegex = "^cookie_",
+    cookieRegex = = /^cookie_/,
     redirect = true) {
     return function(
         cookieOptions,
@@ -15,6 +15,7 @@ exports.Handler = function (
                 if (k.match(cookieRegex)) {
                     const cookieName = k.replace(cookieRegex,"")
                     const cookieValue = request.payload[k]
+                    request.log(["debug"], `Setting ${cookieName} to ${cookieValue}`)
                     h.state(cookieName,cookieValue, cookieOptions)
                 }
             }
