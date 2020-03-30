@@ -2,7 +2,7 @@
 
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
-const cookieParamHandler = require("@distalog/cookie-param-handler").Handler
+const cookieParamHandler = require("@distalog/cookie-param-handler").Handler;
 
 const start = async () => {
 
@@ -18,8 +18,8 @@ const start = async () => {
                 collect: true
             },
             files: {
-                relativeTo: "/",
-            },
+                relativeTo: "/"
+            }
         }
     });
 
@@ -29,12 +29,12 @@ const start = async () => {
         method: '*',
         path: '/{param?}',
         options: {
-            pre: [cookieParamHandler()],
+            pre: [cookieParamHandler()]
         },
         handler: {
             directory: {
                 path: Path.join(__dirname, 'static'),
-                listing: true,
+                listing: true
             }
         }
     });

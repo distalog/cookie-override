@@ -10,21 +10,19 @@ exports.Handler = function (
         redirect,
         request,
         h ) {
-        if (request.method == "post") {
+        if (request.method === "post") {
             for(const k in request.payload) {
                 if (k.match(cookieRegex)) {
-                    const cookieName = k.replace(cookieRegex,"")
-                    const cookieValue = request.payload[k]
-                    request.log(["debug"], `Setting ${cookieName} to ${cookieValue}`)
-                    h.state(cookieName,cookieValue, cookieOptions)
+                    const cookieName = k.replace(cookieRegex,"");
+                    const cookieValue = request.payload[k];
+                    request.log(["debug"], `Setting ${cookieName} to ${cookieValue}`);
+                    h.state(cookieName,cookieValue, cookieOptions);
                 }
             }
             if(redirect) {
-                return h.redirect(request.url).takeover()
+                return h.redirect(request.url).takeover();
             }
         }
         return h.continue;
     }.bind(undefined, cookieOptions,  cookieRegex, redirect);
 };
-
-
