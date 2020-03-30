@@ -1,6 +1,6 @@
 {
     "name": "@distalog/cookie-param-handler",
-    "version": "1.0.7",
+    "version": "1.0.9",
     "description": "Cookie Param Handler: set cookies directly from form inputs.",
     "author": "didier@distalog.ch",
     "scripts": {
@@ -24,8 +24,5 @@
     "bugs": {
         "url": "https://github.com/distalog/cookie-param-handler/issues"
     },
-    "homepage": "https://github.com/distalog/cookie-param-handler#readme",
-    "publishConfig": {
-        "registry":"https://npm.pkg.github.com/"
-    }
+    "homepage": "https://github.com/distalog/cookie-param-handler#readme"
 }
