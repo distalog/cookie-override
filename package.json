@@ -1,26 +1,31 @@
 {
-  "name": "cookie-param-handler",
-  "version": "1.0.4",
-  "description": "Cookie Param Handler: set cookies directly from form inputs.",
-  "author": "didier@distalog.ch",
-  "scripts": {
-    "build": "git pull && npm install",
-    "build-prod": "npm install"
-  },
-  "directories": {
-    "example": "example"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/distalog/cookie-param-handler.git"
-  },
-  "keywords": [
-    "cookie",
-    "http"
-  ],
-  "license": "BSD",
-  "bugs": {
-    "url": "https://github.com/distalog/cookie-param-handler/issues"
-  },
-  "homepage": "https://github.com/distalog/cookie-param-handler#readme"
+    "name": "@distalog/cookie-param-handler",
+    "version": "1.0.7",
+    "description": "Cookie Param Handler: set cookies directly from form inputs.",
+    "author": "didier@distalog.ch",
+    "scripts": {
+        "build": "git pull && npm install",
+        "build-prod": "npm install"
+    },
+    "directories": {
+        "example": "example"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/distalog/cookie-param-handler.git"
+    },
+    "keywords": [
+        "cookie",
+        "http",
+        "hapi",
+        "hapijs"
+    ],
+    "license": "BSD",
+    "bugs": {
+        "url": "https://github.com/distalog/cookie-param-handler/issues"
+    },
+    "homepage": "https://github.com/distalog/cookie-param-handler#readme",
+    "publishConfig": {
+        "registry":"https://npm.pkg.github.com/"
+    }
 }
