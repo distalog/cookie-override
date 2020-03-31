@@ -1,10 +1,13 @@
+// jshint esversion:8
+// jshint node:true
+
 'use strict';
 
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
 const cookieParamHandler = require("@distalog/cookie-param-handler").Handler;
 
-const start = async () => {
+ const start = async () => {
 
     const server = Hapi.server({
         host: 'localhost',

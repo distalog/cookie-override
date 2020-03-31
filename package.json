@@ -28,5 +28,8 @@
     "private": false,
     "publishConfig": {
         "access": "public"
+    },
+    "devDependencies": {
+        "jshint": "^2.11.0"
     }
 }
