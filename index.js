@@ -1,5 +1,4 @@
-// jshint esversion:8
-// jshint node:true
+/* eslint-env node, es2017 */
 
 'use strict';
 
