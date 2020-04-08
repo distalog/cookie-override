@@ -5,11 +5,9 @@ const Lab = require('@hapi/lab');
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
 const cookieParamHandler = require("..").Handler;
-
+const fs = require("fs")
 const { expect } = Code;
 const lab = exports.lab = Lab.script();
-
-
 
 lab.test('sets cookie on call', async () => {
 
@@ -32,9 +30,25 @@ lab.test('sets cookie on call', async () => {
         handler: {
             directory: {
                 path: Path.join(__dirname, 'static'),
-                listing: true
             }
         }
     });
     await server.start();
+    let response = await server.inject({
+        "method": "POST",
+        "url": `${server.info.uri}/form.html`,
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "payload": "cookie_css_consent=foo"
+    })
+    expect(response.statusCode).to.equal(302)
+    expect(response.headers["set-cookie"][0]).to.equal("css_consent=foo; Secure; HttpOnly; SameSite=Strict")
+    let redirectedResponse = await server.inject({
+        "method": "GET",
+        "url": response.headers.location,
+    })
+    const htmlForm = fs.readFileSync(Path.join(__dirname,"static","form.html")).toString()
+    expect(redirectedResponse.statusCode).to.equal(200)
+    expect(redirectedResponse.payload).to.equal(htmlForm)
 });
